@@ -3,3 +3,10 @@ language: node_js
  cache:
    directories:
      - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: QNzapeg38ASUUZLpAscjETO/FagT9/vZ8/uOZFZuSOnDnN5Ph2gbe0g2DpE0dWrjdxS3oJ6wu76ia5DiDMsDE/w3yEimHQ+EYuKx397KQMv034W6ZfqLZHVXwYgmXfg4nzAmF+55CcQoImwahBKTigSz+AaROsv99lizhTTpOydJHf474Us4L9oWbiMTnh4sTI+tURjcf5YV9LaBnV9ZSrOZEMIxlNpeOmf0FD/N9U2SvpR/52OneRLE28RmPpJJRH0Uo27aE99/povi7corfmFUZQIOu5dRmt4pMC/wcZVPbpJ1HoCSsdHscWYjqjNMWSdtRGyxLeMlwNOeDZbjCy0YZy4trLaZhdsUVQw4ddK6MGAOKsTNapNqedU71QjndVkWM1HdfTQhJhPCcaPCtVPFsJ7SIWf8t7xcUq0PYIrB21jIYvWoAhmqK/0az2K22OLxwk4Fn3X2O3X9fuXNmCnM5QrF0guWh2tWVM4r36KU58fyGens6Rhu5Zsr3+9y+5/IcFp/WnV7SLIwjd2NyIUgO/bu8KixcORkz3V9Gxp6cH3Qxx5E0TFVsHhFBCgzeEgjTmxOzjQ44FCEWr1qXPbpHc+9ApZ1YkM2CraCEYSr8xXG5W1cJu/m5+0iS1ptAADvZhwnbT1lOPH6qfDTreAsX/1kFnK6jkLqPs13PgQ=
+  app: shielded-harbor-56134
+  on:
+    repo: DeliaCodes/flex-note-client
