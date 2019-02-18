@@ -26,7 +26,6 @@ export default function Login(props) {
             className="submit"
             type="submit"
             name="submit"
-            role="button"
           />
         </fieldset>
       </form>

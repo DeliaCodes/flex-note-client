@@ -1,20 +1,29 @@
 import React from "react";
-
+import {BrowserRouter as Link} from "react-router-dom";
 import NavAuth from "./Nav-Auth";
 
 export default function AllNav(props) {
   return (
     <nav role="navigation">
-      <a href="/" className="nav">
-        Flex Note Home
-      </a>
+         <li className="nav">
+      <Link to="/">
+      Flex Note Home
+        </Link>
+        </li>
       <NavAuth />
-      <a href="/myNotes" className="nav">
-        My Notes
-      </a>
-      <a href="/addNote" className="nav">
+      <li className="nav">
+      <Link to="my-notes">
+      My Notes
+        </Link>
+        </li>
+      <li className="nav">
+      <Link to="/add-note">
         Add A Note
-      </a>
+        </Link>
+        </li>
     </nav>
   );
 }
+
+
+        

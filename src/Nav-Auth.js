@@ -1,10 +1,13 @@
 import React from "react";
+import {BrowserRouter as Link} from "react-router-dom";
 
 export default function NavAuth(props) {
   return (
-    <a href={props.url} className="nav">
+    <li className="nav">
+      <Link to={props.url}>
       {props.name}
-    </a>
+        </Link>
+        </li>
   );
 }
 

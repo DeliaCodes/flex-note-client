@@ -9,6 +9,7 @@ export default function AddNote(props) {
       <form>
         <fieldset>
           <label htmlFor="note">
+            {/* Template is another or different form - for low number create buttons for each template */}
             <input id="note" defaultValue="Add a Note Here" name="" />
           </label>
         </fieldset>
