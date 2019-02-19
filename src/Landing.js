@@ -1,16 +1,19 @@
 import React from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 export default function Landing(props) {
   return (
-    <section>
-      <header className="banner" role="banner">
-        <h1>Welcome to Flex Note</h1>
-      </header>
+    <Router>
+      <section>
+        <header className="banner" role="banner">
+          <h1>Welcome to Flex Note</h1>
+        </header>
 
-      <p>A place to record thoughts using one of our many templates.</p>
-      <a href="/login" className="nav">
-        Login or Register Here
-      </a>
-    </section>
+        <p>A place to record thoughts using one of our many templates.</p>
+        <Link to="/login" className="nav">
+          Login or Register Here
+      </Link>
+      </section>
+    </Router>
   );
 }
