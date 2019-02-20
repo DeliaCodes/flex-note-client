@@ -1,9 +1,11 @@
 import React from "react";
+import { BrowserRouter as Router, Link} from "react-router-dom";
 import "./css/Login.css";
 
 export default function Login(props) {
   return (
     <section className="mainSection">
+    
       <header className="banner" role="banner">
         <h1>Login Below</h1>
       </header>
@@ -30,9 +32,11 @@ export default function Login(props) {
           />
         </fieldset>
       </form>
-      <a href="regis.html" className="nav">
+      <Router>
+      <Link to="/register">
         Register Here
-      </a>
+      </Link>
+      </Router>
     </section>
   );
 }
