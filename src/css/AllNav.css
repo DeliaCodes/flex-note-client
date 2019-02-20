@@ -1,0 +1,11 @@
+.nav {
+  list-style: none;
+  padding-left: 2em;
+  text-align: center;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
