@@ -4,6 +4,7 @@ import "./css/Login.css";
 
 export default function Login(props) {
   return (
+    <Router>
     <section className="mainSection">
     
       <header className="banner" role="banner">
@@ -32,11 +33,10 @@ export default function Login(props) {
           />
         </fieldset>
       </form>
-      <Router>
       <Link to="/register">
         Register Here
       </Link>
-      </Router>
     </section>
+    </Router>
   );
 }
