@@ -20,7 +20,6 @@ class App extends Component {
           <AllNav />
           <Route exact path="/" component={Landing} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Regis} />
           <Route exact path="/add-note" component={AddNote} />
           <Route exact path="/my-notes" component={NoteFeed} />
