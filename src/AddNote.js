@@ -1,35 +1,36 @@
 import React from "react";
-import { Editor, EditorState, RichUtils } from "draft-js";
-import "../node_modules/draft-js/dist/Draft.css"
+import RichTextEditor from "react-rte";
+import PropTypes from "prop-types";
 import "./css/AddNote.css"
 
 export default class AddNote extends React.Component {
-constructor(props) {
-  super(props);
-  this.state = { editorState: EditorState.createEmpty()};
-  this.onChange = (editorState) => this.setState({editorState});
-  this.handleKeyCommand = this.handleKeyCommand.bind(this);
-}
+  static propTypes = {
+    onChange: PropTypes.func
+  };
 
-handleKeyCommand(command, editorState) {
-
-  const newState = RichUtils.handleKeyCommand(editorState, command);
-  if (newState) {
-    this.onChange(newState);
-    return 'handled';
+  state = {
+    value: RichTextEditor.createEmptyValue()
   }
-  return 'not-handled';
-}
+
+  onChange = (value) => {
+    this.setState({value});
+    if (this.props.onChange) {
+      // Send the changes up to the parent component as an HTML string.
+      // This is here to demonstrate using `.toString()` but in a real app it
+      // would be better to avoid generating a string on each change.
+      this.props.onChange(
+        value.toString('html')
+      );
+    }
+  };
 
 render () {
   return <section>
       <header className="banner" role="banner">
         <h1>Add Notes Here</h1>
       </header>
-      <Editor editorState={this.state.editorState}
-      onChange={this.onChange}
-      handleKeyCommand={this.handleKeyCommand}
-      />
+      <RichTextEditor value={this.state.value} onChange={this.onChange} />
+      
             {/* Template is another or different form - for low number create buttons for each template 
             <form>
         <fieldset>
