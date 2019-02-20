@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./Landing";
 import AllNav from "./AllNav";
 import Login from "./Login";
@@ -18,11 +18,13 @@ class App extends Component {
       Router goes here in place of landing 
       */}
           <AllNav />
+          <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Regis} />
           <Route exact path="/add-note" component={AddNote} />
           <Route exact path="/my-notes" component={NoteFeed} />
+          </Switch>
         </div>
       </Router>
     );
