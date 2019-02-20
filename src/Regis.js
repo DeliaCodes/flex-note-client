@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/Regis.css";
 
 export default function Regis(props) {
   return (

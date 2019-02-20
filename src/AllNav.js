@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import NavAuth from "./Nav-Auth";
+import "./css/AllNav.css";
 
 // @ts-ignore
 export default function AllNav(props) {

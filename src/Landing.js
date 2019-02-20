@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import "./css/Landing.css";
+
 
 export default function Landing(props) {
   return (

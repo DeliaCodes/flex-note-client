@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import "./css/Nav-Auth.css";
 
 export default function NavAuth(props) {
   return (

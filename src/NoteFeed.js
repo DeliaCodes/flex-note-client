@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/NoteFeed.css";
 
 export default function NoteFeed(props) {
   return (

@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./css/AddNote.css"
+
 export default function AddNote(props) {
   return (
     <section>
