@@ -33,9 +33,6 @@ export default function Regis(props) {
           />
         </fieldset>
       </form>
-      <a href="login.html" className="nav">
-        Need To Login?
-      </a>
     </section>
   );
 }
