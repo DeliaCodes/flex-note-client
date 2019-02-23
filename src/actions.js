@@ -15,3 +15,13 @@ export const deleteNote = note => ({
   type: DELETE_NOTE,
   note
 })
+
+export const NAV_LOGIN = "NAV_LOGIN";
+export const loginNav = () => ({
+  type: NAV_LOGIN
+})
+
+export const NAV_LOGOUT = "NAV_LOGOUT";
+export const logoutNav = () => ({
+  type: NAV_LOGOUT
+})

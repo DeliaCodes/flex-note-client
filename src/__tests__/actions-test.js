@@ -1,5 +1,5 @@
 import {
-  ADD_NOTE, addNote, UPDATE_NOTE, updateNote, DELETE_NOTE, deleteNote,
+  ADD_NOTE, addNote, UPDATE_NOTE, updateNote, DELETE_NOTE, deleteNote, NAV_LOGIN, loginNav, NAV_LOGOUT, logoutNav
 } from "../actions";
 
 describe('Add Note Actions', () => {
@@ -28,4 +28,18 @@ describe('Delete Note Actions', () => {
     expect(testAction.type).toEqual(DELETE_NOTE);
     expect(testAction.note).toEqual(item);
   })
+})
+
+describe('Log In Nav Action', () => {
+  it('Should return a log in action', () => {
+    const testAction = loginNav();
+    expect(testAction.type).toEqual(NAV_LOGIN);
+  });
+})
+
+describe('Log Out Nav Action', () => {
+  it('Should return a log out action', () => {
+    const testAction = logoutNav();
+    expect(testAction.type).toEqual(NAV_LOGOUT);
+  });
 })
