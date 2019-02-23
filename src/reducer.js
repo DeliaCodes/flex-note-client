@@ -1,7 +1,6 @@
 import {ADD_NOTE, UPDATE_NOTE, DELETE_NOTE } from "./actions";
 
 const initialState ={
-  notes: [],
   navUrl: "/login",
   navName: "Login",
   notes: [{
