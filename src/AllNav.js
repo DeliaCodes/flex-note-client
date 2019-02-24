@@ -12,7 +12,7 @@ export default function AllNav(props) {
           <li className="nav">
             <Link to="/">Flex Note Home</Link>
           </li>
-          <NavAuth />
+          <NavAuth props={props} />
           <li className="nav">
             <Link to="/my-notes">My Notes</Link>
           </li>
