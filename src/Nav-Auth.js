@@ -1,19 +1,23 @@
 import React from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import "./css/Nav-Auth.css";
 
 export function NavAuth(props) {
-  return (
-    <Router>
-      <li className="nav">
-        <Link to={props.url}>
-          {props.name}
-        </Link>
-      </li>
-    </Router>
+  return (<Router>
+    <li className="nav">
+      <Link to={props.navUrl}>
+        {props.navName}
+      </Link>
+    </li>
+  </Router>
   );
 }
+
+NavAuth.defaultProps = {
+  navUrl: "/login",
+  navName: "Login",
+};
 
 const mapStateToProps = state => ({
   navUrl: state.navUrl,
