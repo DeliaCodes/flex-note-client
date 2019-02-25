@@ -1,3 +1,21 @@
+export const ADD_TEMPLATE = "ADD_TEMPLATE";
+export const addTemplate = template => ({
+  type: ADD_TEMPLATE,
+  template
+})
+
+export const UPDATE_TEMPLATE = "UPDATE_TEMPLATE";
+export const updateTemplate = template => ({
+  type: UPDATE_TEMPLATE,
+  template
+})
+
+export const DELETE_TEMPLATE = "DELETE_TEMPLATE";
+export const deleteTemplate = template => ({
+  type: UPDATE_TEMPLATE,
+  template
+})
+
 export const ADD_NOTE = "ADD_NOTE";
 export const addNote = note => ({
   type: ADD_NOTE,
