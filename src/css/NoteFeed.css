@@ -1,0 +1,11 @@
+.note {
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  flex-direction: column;
+}
