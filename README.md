@@ -1,3 +1,12 @@
+# Welcome to Flex Note!
+
+## Stack
+
+- React
+- Redux
+- Enzyme
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
