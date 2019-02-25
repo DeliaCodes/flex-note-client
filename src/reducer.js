@@ -1,5 +1,4 @@
 import { ADD_NOTE, UPDATE_NOTE, DELETE_NOTE, NAV_LOGIN, NAV_LOGOUT } from "./actions";
-import { combineReducers } from "redux";
 
 const initialState = {
   navUrl: "/login",
@@ -68,8 +67,3 @@ export const crudReducer = (state = initialState, action) => {
   }
   return state;
 };
-
-export default combineReducers({
-  navReducer,
-  crudReducer,
-})
