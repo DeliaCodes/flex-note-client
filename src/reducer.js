@@ -1,6 +1,7 @@
-import {ADD_NOTE, UPDATE_NOTE, DELETE_NOTE, NAV_LOGIN, NAV_LOGOUT } from "./actions";
+import { ADD_NOTE, UPDATE_NOTE, DELETE_NOTE, NAV_LOGIN, NAV_LOGOUT } from "./actions";
+import { combineReducers } from "redux";
 
-const initialState ={
+const initialState = {
   navUrl: "/login",
   navName: "Login",
   notes: [{
@@ -19,37 +20,37 @@ const updateObjectInArray = (array, noteToUpdate) => {
     if (item.id === noteToUpdate.id) {
       return {
         ...item,
-      ...noteToUpdate,
+        ...noteToUpdate,
       }
     }
     return item
   })
 }
 
-function removeItem(array, itemToDelete ) {
+function removeItem(array, itemToDelete) {
   return array.filter((item) => item.id !== itemToDelete.id)
 }
-export const navReducer = (state=initialState, action) => {
-if (action.type === NAV_LOGIN) {
-return Object.assign({}, state, {
-  navUrl: "/login",
-  navName: "Login",
-})
-}
+export const navReducer = (state = initialState, action) => {
+  if (action.type === NAV_LOGIN) {
+    return Object.assign({}, state, {
+      navUrl: "/login",
+      navName: "Login",
+    })
+  }
 
-else if (action.type === NAV_LOGOUT) {
-return Object.assign({}, state, {
-  navUrl: "/",
-  navName: "Logout",
-})
-}
+  else if (action.type === NAV_LOGOUT) {
+    return Object.assign({}, state, {
+      navUrl: "/",
+      navName: "Logout",
+    })
+  }
   return state
 }
-export const crudReducer = (state=initialState, action) => {
+export const crudReducer = (state = initialState, action) => {
   if (action.type === ADD_NOTE) {
-   // console.log('add state', state);
+    // console.log('add state', state);
     return Object.assign({}, state, {
-notes: [...state.notes, action.note]
+      notes: [...state.notes, action.note]
     });
   }
 
@@ -67,3 +68,8 @@ notes: [...state.notes, action.note]
   }
   return state;
 };
+
+export default combineReducers({
+  navReducer,
+  crudReducer,
+})
