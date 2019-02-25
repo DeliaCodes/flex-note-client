@@ -1,16 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "./css/Nav-Auth.css";
 
 export function NavAuth(props) {
-  return (<Router>
+  return (
     <li className="nav">
       <Link to={props.navUrl}>
         {props.navName}
       </Link>
     </li>
-  </Router>
   );
 }
 

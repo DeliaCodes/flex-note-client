@@ -1,12 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./css/Login.css";
 
 export default function Login(props) {
   return (
-    <Router>
     <section className="mainSection">
-    
+
       <header className="banner" role="banner">
         <h1>Login Below</h1>
       </header>
@@ -37,6 +36,5 @@ export default function Login(props) {
         Register Here
       </Link>
     </section>
-    </Router>
   );
 }
