@@ -1,12 +1,12 @@
 body {
-  background: #A0F4FF;
+  background: #E2FADB;
   display: flex;
 }
 
 
 
 nav {
-  background: #78B7BF;
+  background: #A0F4FF;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@ nav {
 }
 
 .nav {
-  color: #233638;
+  color: #000000;
   font-family: 'Montserrat', sans-serif;
 }
 
