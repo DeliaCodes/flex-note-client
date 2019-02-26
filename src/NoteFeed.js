@@ -8,7 +8,7 @@ import "./css/NoteFeed.css";
 
 
 export function NoteFeed(props) {
-  const myNotes = props.notes.map((item, index) => <div key={index} className="note" id={item.id}><p className="title">{item.title}</p><p className="text">{item.text}</p></div>)
+  const myNotes = props.notes.map((item, index) => <div key={index} className="note" id={item.id}><p className="text">{item.text}</p></div>)
 
   return (
     <section className="notes">
