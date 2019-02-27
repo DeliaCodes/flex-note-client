@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RichTextEditor from 'react-rte';
-import { addTemplate, addNote } from "./actions";
+import { addTemplate, addNote } from "./actions/actions";
 import MyTemplates from "./MyTemplates";
 import { connect } from "react-redux";
 
