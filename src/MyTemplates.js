@@ -7,7 +7,7 @@ export function MyTemplates(props) {
 
   const checkIfAnyTemplatesAreSaved = () => {
     if (props.savedTemplates[0].id === 1) {
-      return <p>Save Some Templates Using the Form Below</p>
+      return <p>Save Some Templates Using the Form Above</p>
     }
     return templateButtons;
   }
