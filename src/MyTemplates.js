@@ -5,7 +5,8 @@ import { connect } from "react-redux";
 export function MyTemplates(props) {
   const templateButtons = (templatesToProcess) => {
     let usersTemplates = templatesToProcess.filter((item) => item.id !== 1);
-    return usersTemplates.map((item, index) => <button onClick={() => props.onImpClick(this.props.state.savedTemplates)} key={index} className="templateButton" id={item.id}>{item.name}</button>)
+
+    return usersTemplates.map((item, index) => <button onClick={() => props.onImpClick(props.savedTemplates[index + 1])} key={index} className="templateButton" id={item.id}>{item.name}</button>)
   }
 
   const checkIfAnyTemplatesAreSaved = () => {

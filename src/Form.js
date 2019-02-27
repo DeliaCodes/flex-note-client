@@ -53,7 +53,7 @@ class FormRTE extends Component {
   onImpClick(myRestoredTemplate) {
     console.log('my Restored template', myRestoredTemplate);
     this.setState({
-      value: myRestoredTemplate,
+      value: myRestoredTemplate.templateState,
     })
   }
 
@@ -106,8 +106,9 @@ class FormRTE extends Component {
         </form>
         {/* I need the buttons in the My templates to call this callback
         <button onClick={() => this.onImpClick(this.state.temp)} >Implement</button>
+        () => this.onImpClick(this.props.temp)
         */}
-        <MyTemplates onImpClick={() => this.onImpClick(this.state.temp)} />
+        <MyTemplates onImpClick={(template) => this.onImpClick(template)} />
       </div>
     );
   }
