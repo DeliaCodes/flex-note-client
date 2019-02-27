@@ -19,7 +19,7 @@ class FormRTE extends Component {
     this.setState({
       stateName: event.target.value,
     })
-    console.log('Name changed', this.state.stateName)
+    //console.log('Name changed', this.state.stateName)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,7 +41,7 @@ class FormRTE extends Component {
       name: this.state.stateName,
       templateState: template
     }
-    console.log('on click ', myNewTemplate)
+    // console.log('on click ', myNewTemplate)
     this.props.dispatch(addTemplate(myNewTemplate))
     /*     this.setState({
           temp: template
@@ -51,6 +51,7 @@ class FormRTE extends Component {
 
   // restore template click function
   onImpClick(myRestoredTemplate) {
+    console.log('my Restored template', myRestoredTemplate);
     this.setState({
       value: myRestoredTemplate,
     })
@@ -63,21 +64,21 @@ class FormRTE extends Component {
       text: newContent,
       saveState: editorState
     }));
-    console.log('New Content', newContent);
+    // console.log('New Content', newContent);
   }
 
   onChange(value) {
     const isTextChanged = this.state.value.toString('html') !== value.toString('html');
-    let editorState = this.state.value.getEditorState();
-    let contentState = window.contentState = editorState.getCurrentContent().toJS();
-    console.log('content state ', contentState);
-    console.log('value ', value);
+    // let editorState = this.state.value.getEditorState();
+    // let contentState = window.contentState = editorState.getCurrentContent().toJS();
+    // console.log('content state ', contentState);
+    // console.log('value ', value);
 
 
     // when typing put the value into local state
     // console.log('is text Changed ', isTextChanged);
     //console.log('get current content ', getCurrentContent());
-    console.log('editorState ', editorState);
+    // console.log('editorState ', editorState);
     this.setState({ value }, e => isTextChanged && this.props.input.onChange(value.toString('html')));
   };
 
@@ -113,7 +114,7 @@ class FormRTE extends Component {
 }
 
 const mapStateToProps = state => ({
-  temp: state.templates,
+  temp: state.crud.templates,
 })
 
 export default connect(mapStateToProps)(FormRTE);
