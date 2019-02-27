@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 import RichTextEditor from 'react-rte';
 import { addTemplate, addNote } from "./actions";
+import MyTemplates from "./MyTemplates";
+import { connect } from "react-redux";
 
 class FormRTE extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       value: this.props.input.value === '' ?
         RichTextEditor.createEmptyValue() :
         RichTextEditor.createValueFromString(this.props.input.value, 'html'),
-      temp: {}
+      stateName: "",
     };
   }
 
+  getTemplateName(event) {
+    this.setState({
+      stateName: event.target.value,
+    })
+    console.log('Name changed', this.state.stateName)
+  }
 
   componentWillReceiveProps(nextProps) {
     const isPristine = nextProps.meta.pristine;
@@ -26,15 +33,23 @@ class FormRTE extends Component {
     this.state.value.setContentFromString(nextProps.value, "html");
   }
 
-  onClick(template) {
-    console.log('on click ', template)
-    addTemplate(template)
-    this.setState({
-      temp: template
-    })
+  // save a template click - needs to get the name from the form
+  onClick(event, template) {
+    event.preventDefault();
+    // console.log('on click ', template)
+    let myNewTemplate = {
+      name: this.state.stateName,
+      templateState: template
+    }
+    console.log('on click ', myNewTemplate)
+    this.props.dispatch(addTemplate(myNewTemplate))
+    /*     this.setState({
+          temp: template
+        }) */
     // loop list of templates and store as id and add this to that loop and do it
   }
 
+  // restore template click function
   onImpClick(myRestoredTemplate) {
     this.setState({
       value: myRestoredTemplate,
@@ -42,12 +57,12 @@ class FormRTE extends Component {
   }
 
   onNoteSave() {
-    // use new content to save a note - use dispatch to reduxify
     let editorState = this.state.value.getEditorState();
     let newContent = editorState.getCurrentContent().getPlainText();
-    addNote({
-      text: newContent
-    })
+    this.props.dispatch(addNote({
+      text: newContent,
+      saveState: editorState
+    }));
     console.log('New Content', newContent);
   }
 
@@ -70,13 +85,35 @@ class FormRTE extends Component {
     return (
       <div>
         <RichTextEditor value={this.state.value} onChange={this.onChange.bind(this)} />
-        {/* This button needs to call an add template form*/}
-        <button onClick={() => this.onClick(this.state.value)}>Save as a Template</button>
         <button onClick={() => this.onNoteSave()}>Save as a Note</button>
+        <form>
+          <fieldset>
+            <label htmlFor="templateName">
+              Name Your Template:{" "}
+              <input id="templateName" defaultValue="Name Your Template" name="templateName"
+                onChange={e => this.getTemplateName(e)} />
+            </label>
+            <input
+              onClick={(e) => this.onClick(e, this.state.value)
+              }
+              id="templateSaveSubmit"
+              className="submit"
+              type="submit"
+              name="submit"
+            />
+          </fieldset>
+        </form>
+        {/* I need the buttons in the My templates to call this callback
         <button onClick={() => this.onImpClick(this.state.temp)} >Implement</button>
+        */}
+        <MyTemplates onImpClick={() => this.onImpClick(this.state.temp)} />
       </div>
     );
   }
 }
 
-export default FormRTE;
+const mapStateToProps = state => ({
+  temp: state.templates,
+})
+
+export default connect(mapStateToProps)(FormRTE);
