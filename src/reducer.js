@@ -8,7 +8,8 @@ const initialState = {
     text: `Tu quoque litoribus nostris, Aeneia nutrix,
 aeternam moriens famam, Caieta, dedisti;
 et nunc servat honos sedem tuus, ossaque nomen
-Hesperia in magna, si qua est ea gloria, signat.`
+Hesperia in magna, si qua est ea gloria, signat.`,
+    saveState: {}
   }],
   templates: [{
     templateState: {},
