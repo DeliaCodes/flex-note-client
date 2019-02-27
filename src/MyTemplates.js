@@ -3,13 +3,17 @@ import { connect } from "react-redux";
 
 
 export function MyTemplates(props) {
-  const templateButtons = props.savedTemplates.map((item, index) => <button onClick={() => this.props.OnImpClick} key={index} className="templateButton" id={item.id}>{item.name}</button>)
+  const templateButtons = (templatesToProcess) => {
+    let usersTemplates = templatesToProcess.filter((item) => item.id !== 1);
+    return usersTemplates.map((item, index) => <button onClick={() => this.props.OnImpClick()} key={index} className="templateButton" id={item.id}>{item.name}</button>)
+  }
 
   const checkIfAnyTemplatesAreSaved = () => {
-    if (props.savedTemplates[0].id === 1) {
+    console.log('Check if any templates ', props.savedTemplates)
+    if (props.savedTemplates.length === 1) {
       return <p>Save Some Templates Using the Form Above</p>
     }
-    return templateButtons;
+    else { return templateButtons(props.savedTemplates) }
   }
 
   return (
@@ -24,12 +28,13 @@ export function MyTemplates(props) {
 MyTemplates.defaultProps = {
   savedTemplates: [{
     id: 1,
-    name: "Not a saved template"
+    name: "default template placeholder"
   }]
 }
 
-const mapStateToProps = state => ({
-  savedTemplates: state.templates
-})
+const mapStateToProps = state => {
+  console.log('map to state ', state)
+  return { savedTemplates: state.crud.templates }
+}
 
 export default connect(mapStateToProps)(MyTemplates);

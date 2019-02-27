@@ -13,6 +13,7 @@ Hesperia in magna, si qua est ea gloria, signat.`,
     saveState: {}
   }],
   templates: [{
+    id: 1,
     templateState: {},
     name: ""
   }]
