@@ -29,6 +29,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "enzyme": "^3.9.0"
+    "enzyme": "^3.9.0",
+    "redux-devtools-extension": "^2.13.8"
   }
 }
