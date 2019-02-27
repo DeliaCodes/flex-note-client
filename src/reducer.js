@@ -1,4 +1,4 @@
-import { ADD_NOTE, UPDATE_NOTE, DELETE_NOTE, NAV_LOGIN, NAV_LOGOUT } from "./actions";
+import { ADD_NOTE, UPDATE_NOTE, DELETE_NOTE, ADD_TEMPLATE, UPDATE_TEMPLATE, DELETE_TEMPLATE, NAV_LOGIN, NAV_LOGOUT } from "./actions";
 
 const initialState = {
   navUrl: "/login",
@@ -67,6 +67,25 @@ export const crudReducer = (state = initialState, action) => {
   else if (action.type === DELETE_NOTE) {
     return Object.assign({}, state, {
       notes: removeItem(state.notes, action.note)
+    })
+  }
+
+  else if (action.type === ADD_TEMPLATE) {
+    // console.log('add template', state);
+    return Object.assign({}, state, {
+      templates: [...state.templates, action.template]
+    });
+  }
+
+  else if (action.type === UPDATE_TEMPLATE) {
+    return Object.assign({}, state, {
+      notes: updateObjectInArray(state.templates, action.template)
+    })
+  }
+
+  else if (action.type === DELETE_TEMPLATE) {
+    return Object.assign({}, state, {
+      templates: removeItem(state.templates, action.template)
     })
   }
   return state;
