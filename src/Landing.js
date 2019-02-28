@@ -12,7 +12,7 @@ export default function Landing(props) {
         </header>
 
         <p>A place to record thoughts using one of our many templates.</p>
-        <Link to="/login" className="nav">
+        <Link to="/login" className="linkButton">
           Login or Register Here
       </Link>
       </section>

@@ -1,0 +1,25 @@
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+form {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+label {
+  margin-top: 0.5em;
+}
+
+#loginSubmit {
+  margin-top: 0.5em;
+  background-color: #494949;
+color: #ffffff;
+border-radius: 15px;
+border: none;
+}
+
+
+

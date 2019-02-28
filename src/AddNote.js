@@ -9,7 +9,7 @@ export class AddNote extends React.Component {
   render() {
     return <section className="add-note">
       <header className="banner" role="banner">
-        <h1>Add Notes Here</h1>
+        <h1>Create A Note Or A Template Here</h1>
       </header>
       <Field name="description" component={FormRTE} />
 

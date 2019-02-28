@@ -12,7 +12,7 @@ export function MyTemplates(props) {
   const checkIfAnyTemplatesAreSaved = () => {
     // console.log('Check if any templates ', props.savedTemplates)
     if (props.savedTemplates.length === 1) {
-      return <p>Save Some Templates Using the Form Above</p>
+      return <p>Your custom templates will display here. Save some using the form above.</p>
     }
     else { return templateButtons(props.savedTemplates) }
   }

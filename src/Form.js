@@ -11,7 +11,7 @@ class FormRTE extends Component {
       value: this.props.input.value === '' ?
         RichTextEditor.createEmptyValue() :
         RichTextEditor.createValueFromString(this.props.input.value, 'html'),
-      stateName: "Name Your Template Here",
+      stateName: "My Template Name",
     };
   }
 
@@ -45,7 +45,7 @@ class FormRTE extends Component {
     // console.log('on click ', myNewTemplate)
     this.props.dispatch(addTemplate(myNewTemplate))
     this.setState({
-      stateName: "Name Your Template Here",
+      stateName: "My Template Name Here",
     })
     /*     this.setState({
           temp: template
@@ -95,23 +95,26 @@ class FormRTE extends Component {
       <div>
         <RichTextEditor value={this.state.value} onChange={this.onChange.bind(this)} />
         <button onClick={() => this.onNoteSave()}>Save as a Note</button>
-        <form>
-          <fieldset>
-            <label htmlFor="templateName">
-              Name Your Template:{" "}
-              <input id="templateName" value={this.state.stateName} name="templateName"
-                onChange={e => this.getTemplateName(e)} />
-            </label>
-            <input
-              onClick={(e) => this.onClick(e, this.state.value)
-              }
-              id="templateSaveSubmit"
-              className="submit"
-              type="submit"
-              name="submit"
-            />
-          </fieldset>
-        </form>
+        <section className="template">
+          <h3>Create Or Apply A Custom Template</h3>
+          <form>
+            <fieldset>
+              <label htmlFor="templateName">
+                Name Your Template:{" "}
+                <input id="templateName" value={this.state.stateName} name="templateName"
+                  onChange={e => this.getTemplateName(e)} />
+              </label>
+              <input
+                onClick={(e) => this.onClick(e, this.state.value)
+                }
+                id="templateSaveSubmit"
+                className="submit"
+                type="submit"
+                name="submit"
+              />
+            </fieldset>
+          </form>
+        </section>
         {/* I need the buttons in the My templates to call this callback
         <button onClick={() => this.onImpClick(this.state.temp)} >Implement</button>
         () => this.onImpClick(this.props.temp)

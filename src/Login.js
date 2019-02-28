@@ -32,7 +32,7 @@ export default function Login(props) {
           />
         </fieldset>
       </form>
-      <Link to="/register">
+      <Link className="linkButton" to="/register">
         Register Here
       </Link>
     </section>

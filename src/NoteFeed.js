@@ -10,7 +10,7 @@ import "./css/NoteFeed.css";
 export function NoteFeed(props) {
   const myNotes = array => {
     if (array.length < 2) {
-      return <p>Click on the Add Note link above to create some notes!</p>
+      return <p className="noNote">Click on the Add A Note link above to create some notes!</p>
     }
 
     else {
@@ -20,13 +20,13 @@ export function NoteFeed(props) {
   }
 
   return (
-    <section className="notes">
+    <section className="myNotes">
       <header className="banner" role="banner">
         <h1>My Notes</h1>
       </header>
       {/*        
       */}
-      <div>
+      <div className="display">
         {myNotes(props.notes)}
       </div>
     </section>

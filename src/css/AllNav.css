@@ -1,11 +1,19 @@
-.nav {
-  list-style: none;
-  padding-left: 2em;
-  text-align: center;
-  margin: auto;
-}
-
 ul {
   list-style: none;
   display: flex;
+}
+
+nav {
+  background: #A0F4FF;
+  width: 100%;
+  display: flex;
+  font-size: 1.5em;
+}
+
+.nav {
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  list-style: none;
+  padding-left: 2em;
+  text-align: center;
 }
