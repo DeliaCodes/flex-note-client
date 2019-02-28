@@ -6,10 +6,7 @@ const initialState = {
   navName: "Login",
   notes: [{
     id: 1,
-    text: `Tu quoque litoribus nostris, Aeneia nutrix,
-aeternam moriens famam, Caieta, dedisti;
-et nunc servat honos sedem tuus, ossaque nomen
-Hesperia in magna, si qua est ea gloria, signat.`,
+    text: `Click on the Add Note link above to create some notes!`,
     saveState: {}
   }],
   templates: [{

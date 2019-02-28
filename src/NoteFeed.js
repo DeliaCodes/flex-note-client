@@ -8,7 +8,16 @@ import "./css/NoteFeed.css";
 
 
 export function NoteFeed(props) {
-  const myNotes = props.notes.map((item, index) => <div key={index} className="note" id={item.id}><p className="text">{item.text}</p></div>)
+  const myNotes = array => {
+    if (array.length < 2) {
+      return <p>Click on the Add Note link above to create some notes!</p>
+    }
+
+    else {
+      let userNotes = array.filter((item) => item.id !== 1);
+      return userNotes.map((item, index) => <div key={index + 1} className="note" id={item.id}><p className="text">{item.text}</p></div>)
+    }
+  }
 
   return (
     <section className="notes">
@@ -18,7 +27,7 @@ export function NoteFeed(props) {
       {/*        
       */}
       <div>
-        {myNotes}
+        {myNotes(props.notes)}
       </div>
     </section>
   );
@@ -26,7 +35,6 @@ export function NoteFeed(props) {
 NoteFeed.defaultProps = {
   notes: [{
     id: 1,
-    title: "Today's Aeneid Reading",
     text: `Tu quoque litoribus nostris, Aeneia nutrix,
 aeternam moriens famam, Caieta, dedisti;
 et nunc servat honos sedem tuus, ossaque nomen
