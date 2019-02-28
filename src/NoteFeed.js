@@ -35,7 +35,7 @@ Hesperia in magna, si qua est ea gloria, signat.`
 };
 
 const mapStateToProps = state => ({
-  notes: state.notes,
+  notes: state.crud.notes,
 })
 
 export default connect(mapStateToProps)(NoteFeed);

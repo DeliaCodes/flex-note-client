@@ -11,7 +11,7 @@ class FormRTE extends Component {
       value: this.props.input.value === '' ?
         RichTextEditor.createEmptyValue() :
         RichTextEditor.createValueFromString(this.props.input.value, 'html'),
-      stateName: "",
+      stateName: "Name Your Template Here",
     };
   }
 
@@ -19,6 +19,7 @@ class FormRTE extends Component {
     this.setState({
       stateName: event.target.value,
     })
+
     //console.log('Name changed', this.state.stateName)
   }
 
@@ -43,6 +44,9 @@ class FormRTE extends Component {
     }
     // console.log('on click ', myNewTemplate)
     this.props.dispatch(addTemplate(myNewTemplate))
+    this.setState({
+      stateName: "Name Your Template Here",
+    })
     /*     this.setState({
           temp: template
         }) */
@@ -64,6 +68,10 @@ class FormRTE extends Component {
       text: newContent,
       saveState: editorState
     }));
+    this.setState({
+      value: RichTextEditor.createEmptyValue()
+    });
+    // set editor state back to empty
     // console.log('New Content', newContent);
   }
 
@@ -91,7 +99,7 @@ class FormRTE extends Component {
           <fieldset>
             <label htmlFor="templateName">
               Name Your Template:{" "}
-              <input id="templateName" defaultValue="Name Your Template" name="templateName"
+              <input id="templateName" value={this.state.stateName} name="templateName"
                 onChange={e => this.getTemplateName(e)} />
             </label>
             <input
