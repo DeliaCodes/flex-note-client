@@ -17,3 +17,15 @@ nav {
   padding-left: 2em;
   text-align: center;
 }
+
+@media only screen and (orientation: portrait) {
+
+  ul {
+    flex-direction: column;
+    
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+}
