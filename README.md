@@ -6,11 +6,14 @@ An application to record notes using templates. Currently in development.
 
 ## Stack
 
+### Frontend
 - React
 - Redux
 - Enzyme
 - HTML5
 - CSS3
+
+### Backend
 - MongoDB
 - Mongoose
 - Express
