@@ -13,6 +13,6 @@ p {
   font-size: larger; 
 }
 
-/* .linkButton {
-
-} */
+.linkButton {
+  text-decoration: none;
+} 

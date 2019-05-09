@@ -18,6 +18,10 @@ nav {
   text-align: center;
 }
 
+.nav a {
+  text-decoration: none;
+}
+
 @media only screen and (orientation: portrait) {
 
   ul {
